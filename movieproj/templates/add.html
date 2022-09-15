@@ -1,0 +1,9 @@
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+ <center> <input type="text" name="name" placeholder="Enter ur movie name"><br></center>
+ <center> <input type="text" name="desc" placeholder="Enter ur movie description"><br></center>
+  <center><input type="text" name="year" placeholder="Enter ur movie year"><br></center>
+                 <center> <input type="file" name="img" placeholder="Upload ur movie image"><br></center>
+  <center><input type="submit"><center>
+
+</form>

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+{% block body %}
+<style>
+<!--.container {-->
+<!--    padding:2rem 10%;-->
+
+<!--}-->
+<!--.card {-->
+<!--          box-shadow: 0 0 4px rgba(0,0,0,0.4);-->
+<!--          padding:15px 20px;-->
+<!--          text-align: justify;-->
+
+<!--          display:flex;-->
+<!--          flex-direction: column;-->
+<!--          flex:1 0 20em;-->
+<!--           width:400px;-->
+
+<!--}-->
+.flex{
+    display: flex;
+  flex_flow : wrap;
+  gap: 1rem;
+  }
+
+<!--.btn{-->
+<!--display:inline-block;-->
+<!--padding:10px 20px;-->
+<!--margin:10px 0;-->
+<!--margin-top:auto;-->
+<!--align-self:flex-start;-->
+<!--}-->
+
+
+
+
+</style>
+<div class="container">
+    <div class="flex">
+
+<div class="row">
+
+
+
+        {% for i in movie_list %}
+            <div class="col">
+
+            <div class="card h-100"style="width:18rem;" >
+                <img src="{{i.img.url}}" class="card-img-top" src="..." alt="Card image cap">
+
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{i.name}}</h5>
+
+                    <p class="card-text">{{i.desc}}</p>
+
+                    <a href="{% url 'movieapp:detail' i.id %}" class="align-self-end btn btn-lg btn-block btn-danger "style="margin-top: auto;">View Detail</a><br>
+
+                </div>
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+</div>
+</div>
+</div>
+{% endblock %}
+<!--</head>-->
+<!--</html>-->
